@@ -26,7 +26,7 @@ class Main {
           {
             System.out.println("Podaj imie studenta:");
             String imie = wybor.nextLine();
-            System.out.println("Podaj imie studenta:");
+            System.out.println("Podaj nazwisko studenta:");
             String nazwisko = wybor.nextLine();
             System.out.println("Podaj wiek studenta:");
             int wiek = wybor.nextByte();

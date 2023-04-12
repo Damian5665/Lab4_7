@@ -26,12 +26,14 @@ class Main {
           {
             System.out.println("Podaj imie studenta:");
             String imie = wybor.nextLine();
+            System.out.println("Podaj imie studenta:");
+            String nazwisko = wybor.nextLine();
             System.out.println("Podaj wiek studenta:");
             int wiek = wybor.nextByte();
             wybor.nextLine();
           try {
             Service s = new Service();
-            s.addStudent(new Student(imie, wiek));
+            s.addStudent(new Student(imie, nazwisko, wiek));
             System.out.println("Dodano.");
             //s.addStudent(new Student("Krzysztof", 20));
             //s.addStudent(new Student("Janusz", 40));

@@ -1,3 +1,2 @@
-Krzysztof 20
-Janusz 40
-Kamil 5
+Kamil Podloga 34
+Kamil Dizik 54

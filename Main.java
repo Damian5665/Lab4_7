@@ -9,12 +9,13 @@ Kod bazowy programu Commit4_0:
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 class Main {
   public static void main(String[] args) {
-    System.out.print("Wybierz akcje:" + "\n" + "1 - Dodaj studenta." + "\n" + "2 - Wyswitl studentow.\n0 - Zakoncz");
+    System.out.print("Wybierz akcje:" + "\n" + "1 - Dodaj studenta." + "\n" + "2 - Wyswitl studentow.\n3 - wyszukaj\n0 - Zakoncz");
     Scanner wybor = new Scanner(System.in); 
     int x = wybor.nextByte();
     wybor.nextLine();
@@ -69,9 +70,23 @@ class Main {
             }
             break;
           }
-        default:
+          case 3:
           {
-            System.out.println("Zły wybor.");
+            System.out.println("Podaj imie studenta:");
+            String name = wybor.nextLine();
+            Service s = new Service();
+            List<Student> students = s.findStudentByName(name);
+            if (students.isEmpty()) 
+            {
+              System.out.println("Nie znaleziono studentów o podanym imieniu.");
+            } 
+            else 
+            {
+              for (Student student : students) 
+              {
+                System.out.println(student.ToString());
+              }
+            }
             break;
           }
         }

@@ -31,9 +31,11 @@ class Main {
             System.out.println("Podaj wiek studenta:");
             int wiek = wybor.nextByte();
             wybor.nextLine();
+            System.out.println("Podaj ulice studenta:");
+            String ulica = wybor.nextLine();
           try {
             Service s = new Service();
-            s.addStudent(new Student(imie, nazwisko, wiek));
+            s.addStudent(new Student(imie, nazwisko, wiek, ulica));
             System.out.println("Dodano.");
             //s.addStudent(new Student("Krzysztof", 20));
             //s.addStudent(new Student("Janusz", 40));

@@ -9,6 +9,8 @@ Kod bazowy programu Commit4_0:
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 class Main {
   public static void main(String[] args) {
@@ -33,9 +35,18 @@ class Main {
             wybor.nextLine();
             System.out.println("Podaj ulice studenta:");
             String ulica = wybor.nextLine();
+            System.out.println("Podaj Rok:");
+            int rok = wybor.nextInt();
+            System.out.println("Podaj miesiac:");
+            int miesiac = wybor.nextInt();
+            System.out.println("Podaj dzien:");
+            int dzien = wybor.nextInt();
+            LocalDate data = LocalDate.of(rok,miesiac,dzien);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.LLLL.yyyy");
+            String formattedString = data.format(formatter);
           try {
             Service s = new Service();
-            s.addStudent(new Student(imie, nazwisko, wiek, ulica));
+            s.addStudent(new Student(imie, nazwisko, wiek, ulica,formattedString));
             System.out.println("Dodano.");
             //s.addStudent(new Student("Krzysztof", 20));
             //s.addStudent(new Student("Janusz", 40));
